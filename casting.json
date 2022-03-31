@@ -15,11 +15,38 @@
             "2022" : "Renato Góes"             
         }
     },
-    "6a5fe9c2" : {
+    "c0b5b45e" : {
         "Name" : "Anacleto",
         "Keyword" : "Anacleto",
         "Cast" : {
             "2022" : "Romeo Benedito Lucialdo"             
         }
-    }    
+    },
+    "d6ee1f9a" : {
+        "Name" : "Chico",
+        "Keyword" : "Chico",
+        "Cast" : {
+            "2022" : "Túlio Starling"             
+        }
+    },
+    "ce9ca204" : {
+        "Name" : "Gil",
+        "Keyword" : "Gil",
+        "Cast" : {
+            "2022" : "Enrique Diaz"             
+        }
+    },
+    "e22dbe03" : {
+        "Name" : "Raimundo",
+        "Keyword" : "Raimundo",
+        "Cast" : { }
+    },
+    "ba21f6e8" : {
+        "Name" : "Maria Marruá",
+        "Keyword" : "Maria",
+        "Cast" : {
+            "1990" : "Cássia Kis",
+            "2022" : "Juliana Paes"             
+        }
+    }                
 }
