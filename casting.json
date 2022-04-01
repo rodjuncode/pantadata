@@ -15,6 +15,13 @@
             "2022" : "Renato Góes"             
         }
     },
+    "bafc8f94" : {
+        "Name" : "Ceci",
+        "Keyword" : "Ceci",
+        "Cast" : {
+            "2022" : "Paulo Gorgulho"             
+        }
+    },
     "c0b5b45e" : {
         "Name" : "Anacleto",
         "Keyword" : "Anacleto",
@@ -48,5 +55,36 @@
             "1990" : "Cássia Kis",
             "2022" : "Juliana Paes"             
         }
-    }                
+    },             
+    "1280801c" : {
+        "Name" : "Eugênio",
+        "Keyword" : "Eugênio",
+        "Cast" : {
+            "2022" : "Almir Sater"             
+        }
+    },             
+    "37edc2c8" : {
+        "Name" : "Madeleine",
+        "Keyword" : "Madeleine",
+        "Cast" : {
+            "1990" : "Ítala Nandi",
+            "2022" : "Bruna Linzmeyer"             
+        }
+    },             
+    "14087b09" : {
+        "Name" : "Gustavo",
+        "Keyword" : "Gustavo",
+        "Cast" : {
+            "1990" : "José de Abreu",
+            "2022" : "Caco Ciocler"             
+        }
+    },             
+    "53b995d8" : {
+        "Name" : "Antero",
+        "Keyword" : "Antero",
+        "Cast" : {
+            "1990" : "Sérgio Britto",
+            "2022" : "Leopoldo Pacheco"             
+        }
+    }             
 }
