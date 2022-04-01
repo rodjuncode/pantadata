@@ -67,7 +67,7 @@
         "Name" : "Madeleine",
         "Keyword" : "Madeleine",
         "Cast" : {
-            "1990" : "Ítala Nandi",
+            "1990" : "Ingra Lyberato",
             "2022" : "Bruna Linzmeyer"             
         }
     },             
@@ -86,5 +86,27 @@
             "1990" : "Sérgio Britto",
             "2022" : "Leopoldo Pacheco"             
         }
-    }             
+    },
+    "d81df628" : {
+        "Name" : "Mariana",
+        "Keyword" : "Mariana",
+        "Cast" : {
+            "1990" : "Nathalia Timberg",
+            "2022" : "Selma Egrei"             
+        }
+    },
+    "86d17c16" : {
+        "Name" : "Irma",
+        "Keyword" : "Irma",
+        "Cast" : {
+            "1990" : "Carolina Ferraz",
+            "2022" : "Malu Rodrigues"             
+        }
+    },
+    "26a06c8b" : {
+        "Name" : "José Maria",
+        "Keyword" : "José Maria",
+        "Cast" : { }
+    }              
+
 }
