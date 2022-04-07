@@ -103,10 +103,47 @@
             "2022" : "Malu Rodrigues"             
         }
     },
-    "26a06c8b" : {
-        "Name" : "José Maria",
-        "Keyword" : "José Maria",
-        "Cast" : { }
-    }              
-
+    "d2597307" : {
+        "Name" : "Filó",
+        "Keyword" : "Filó",
+        "Cast" : {
+            "1990" : "Tânia Alves",
+            "2022" : "Letícia Salles"             
+        }
+    },
+    "e10f6563" : {
+        "Name" : "Tião",
+        "Keyword" : "Tião",
+        "Cast" : {
+            "2022" : "Fábio Neppo"             
+        }
+    },      
+    "83d6fe8b" : {
+        "Name" : "Quim",
+        "Keyword" : "Quim",
+        "Cast" : {
+            "2022" : "Chico Teixeira"             
+        }
+    },
+    "f65da5a0" : {
+        "Name" : "Jove",
+        "Keyword" : "Jove",
+        "Cast" : {
+            "2022" : "Jesuíta Barbosa"             
+        }
+    },
+    "1a00765e" : {
+        "Name" : "Velho do Rio",
+        "Keyword" : "Velho do Rio",
+        "Cast" : {
+            "2022" : "Osmar Prado"             
+        }
+    },
+    "82df71c5" : {
+        "Name" : "Juma",
+        "Keyword" : "Juma",
+        "Cast" : {
+            "2022" : "Alanis Guillen"             
+        }
+    }    
 }
