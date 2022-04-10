@@ -37,14 +37,16 @@
         "Keyword" : "Chico",
         "Cast" : {
             "2022" : "Túlio Starling"             
-        }
+        },
+        "Avatar" : "tulio-starling"
     },
     "ce9ca204" : {
         "Name" : "Gil",
         "Keyword" : "Gil",
         "Cast" : {
             "2022" : "Enrique Diaz"             
-        }
+        },
+        "Avatar" : "enrique-diaz"
     },
     "e22dbe03" : {
         "Name" : "Raimundo",
@@ -57,14 +59,16 @@
         "Cast" : {
             "1990" : "Cássia Kis",
             "2022" : "Juliana Paes"             
-        }
+        },
+        "Avatar" : "juliana-paes"
     },             
     "1280801c" : {
         "Name" : "Eugênio",
         "Keyword" : "Eugênio",
         "Cast" : {
             "2022" : "Almir Sater"             
-        }
+        },
+        "Avatar" : "almir-sater"
     },             
     "37edc2c8" : {
         "Name" : "Madeleine",
