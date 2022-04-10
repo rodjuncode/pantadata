@@ -76,7 +76,8 @@
         "Cast" : {
             "1990" : "Ingra Lyberato",
             "2022" : "Bruna Linzmeyer"             
-        }
+        },
+        "Avatar" : "bruna-linzmeyer"
     },             
     "14087b09" : {
         "Name" : "Gustavo",
@@ -84,7 +85,8 @@
         "Cast" : {
             "1990" : "José de Abreu",
             "2022" : "Caco Ciocler"             
-        }
+        },
+        "Avatar" : "caco-ciocler"
     },             
     "53b995d8" : {
         "Name" : "Antero",
@@ -92,7 +94,8 @@
         "Cast" : {
             "1990" : "Sérgio Britto",
             "2022" : "Leopoldo Pacheco"             
-        }
+        },
+        "Avatar" : "leopoldo-pacheco"
     },
     "d81df628" : {
         "Name" : "Mariana",
@@ -100,7 +103,8 @@
         "Cast" : {
             "1990" : "Nathalia Timberg",
             "2022" : "Selma Egrei"             
-        }
+        },
+        "Avatar" : "selma-egrei"
     },
     "86d17c16" : {
         "Name" : "Irma",
