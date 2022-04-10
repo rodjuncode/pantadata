@@ -112,7 +112,8 @@
         "Cast" : {
             "1990" : "Carolina Ferraz",
             "2022" : "Malu Rodrigues"             
-        }
+        },
+        "Avatar" : "malu-rodrigues"
     },
     "d2597307" : {
         "Name" : "Filó",
@@ -120,41 +121,47 @@
         "Cast" : {
             "1990" : "Tânia Alves",
             "2022" : "Letícia Salles"             
-        }
+        },
+        "Avatar" : "leticia-salles"
     },
     "e10f6563" : {
         "Name" : "Tião",
         "Keyword" : "Tião",
         "Cast" : {
             "2022" : "Fábio Neppo"             
-        }
+        },
+        "Avatar" : "fabio-neppo"
     },      
     "83d6fe8b" : {
         "Name" : "Quim",
         "Keyword" : "Quim",
         "Cast" : {
             "2022" : "Chico Teixeira"             
-        }
+        },
+        "Avatar" : "chico-teixeira"
     },
     "f65da5a0" : {
         "Name" : "Jove",
         "Keyword" : "Jove",
         "Cast" : {
             "2022" : "Jesuíta Barbosa"             
-        }
+        },
+        "Avatar" : "jesuita-barbosa"
     },
     "1a00765e" : {
         "Name" : "Velho do Rio",
         "Keyword" : "Velho do Rio",
         "Cast" : {
             "2022" : "Osmar Prado"             
-        }
+        },
+        "Avatar" : "osmar-prado"
     },
     "82df71c5" : {
         "Name" : "Juma",
         "Keyword" : "Juma",
         "Cast" : {
             "2022" : "Alanis Guillen"             
-        }
+        },
+        "Avatar" : "alanis-guillen"
     }    
 }
