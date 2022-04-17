@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>PantaDATA</title>
+    <style>
+        body { 
+          background: linear-gradient(90deg, #FF5858 0%, #FFD089 63.02%);
+          margin: 0; 
+          padding: 0; 
+        }
+        #app { }
+
+        #characters-cards {
+          display: none;
+          left: 0;
+          position: fixed;
+          top: 0;
+        }
+      
+        #characters-cards .card {
+          display: none;
+        }
+      
+        #characters-cards h3 {
+          color: #67593F;
+          font-size: 2em;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      
+        #characters-cards img {
+          border-radius: 50%;
+        }
+
+        #stream {
+          margin: 0 auto;
+          width: 90%;
+        }
+        
+      </style>
+</head>
+<body>
+    <div id="app">
+      <div id="stream"></div>
+      <div id="characters-cards">
+        <button id="close-card">X</button>
+      </div>
+    </div>    
+    <script src="assets/js/panta.js"></script>
+</body>
+</html>
