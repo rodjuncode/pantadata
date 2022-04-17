@@ -108,7 +108,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .data(series)
             .join('path')
             .attr('d', area)
-            .attr('fill', d => d3.interpolateGnBu(Math.random()))
+            .attr('fill', d => d3.interpolateBlues(Math.random()))
             .attr('id', d => 'stream-' + d.key.hashCode());
 
         const cards = d3.select('#characters-cards')
@@ -132,16 +132,16 @@ d3.json('data/episodes.json').then(data => { // loading episodes
         streams
         .on('click', (e,d) => {
           d3.select('#overlay')
-            .transition().duration('500').style('opacity', '0.9');
+            .transition().duration('500').style('opacity', '0.98');
           if (d3.selectAll('#info-overlay').nodes().length == 0) {
             chart.append('rect')
-              .attr('fill', '#FFE9D9')
+              .attr('fill', '#FFCA88')
               .attr('width', 100000)
               .attr('height', 100000)
               .attr('transform', 'translate(0,-50000)')
               .attr('opacity', '0')
               .attr('id', 'info-overlay')
-              .transition().duration('500').attr('opacity', '0.9');
+              .transition().duration('500').attr('opacity', '0.95');
             d3.select('#stream-' + d.key.hashCode()).raise();
             d3.select('#card-' + d.key.hashCode()).style('display', 'flex');
             d3.select('#characters-cards').style('display', 'block');
