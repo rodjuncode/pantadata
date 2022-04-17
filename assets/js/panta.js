@@ -111,7 +111,9 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .join('path')
             .attr('d', area)
             .attr('fill', d => color(d.key))
-            .attr('id', d => 'stream-' + d.key.hashCode());
+            .attr('original-color', d => color(d.key))
+            .attr('id', d => 'stream-' + d.key.hashCode())
+            .attr('class', 'stream');
 
         const cards = d3.select('#characters-cards')
             .selectAll('div')
@@ -168,7 +170,8 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 d3.select('#overlay')
                 .transition().duration('500').style('opacity', '0');
                 d3.selectAll('.card').style('display', 'none');
-                d3.select('#characters-cards').style('display', 'none');
+                d3.select('#characters-cards').style('display', 'none')
+                d3.selectAll('path.stream').attr('fill', s => color(s.key));
         });
 
     });
