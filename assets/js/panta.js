@@ -74,6 +74,8 @@ d3.json('data/episodes.json').then(data => { // loading episodes
 
         const xAxysSize = document.querySelector('#stream').offsetWidth*30;
         const yAxysSize = document.querySelector('#stream').offsetWidth*.7;
+        const color = d3.scaleOrdinal(casting.map((c, i) => d3.interpolateYlGnBu(1/casting.length*i))).domain(casting.map(c => c.Keyword));
+    
 
         const stack = d3.stack()
             .offset(d3.stackOffsetWiggle)
@@ -108,7 +110,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .data(series)
             .join('path')
             .attr('d', area)
-            .attr('fill', d => d3.interpolateBlues(Math.random()))
+            .attr('fill', d => color(d.key))
             .attr('id', d => 'stream-' + d.key.hashCode());
 
         const cards = d3.select('#characters-cards')
@@ -134,15 +136,17 @@ d3.json('data/episodes.json').then(data => { // loading episodes
           d3.select('#overlay')
             .transition().duration('500').style('opacity', '0.98');
           if (d3.selectAll('#info-overlay').nodes().length == 0) {
+            const myColor = d3.color(d3.select('#stream-' + d.key.hashCode()).attr('fill'));
             chart.append('rect')
-              .attr('fill', '#FFCA88')
+              .attr('fill', '#FFE9D9')
               .attr('width', 100000)
               .attr('height', 100000)
               .attr('transform', 'translate(0,-50000)')
               .attr('opacity', '0')
               .attr('id', 'info-overlay')
-              .transition().duration('500').attr('opacity', '0.95');
+              .transition().duration('500').attr('opacity', '0.8');
             d3.select('#stream-' + d.key.hashCode()).raise();
+            d3.select('#stream-' + d.key.hashCode()).attr('fill', myColor.darker(2))
             d3.select('#card-' + d.key.hashCode()).style('display', 'flex');
             d3.select('#characters-cards').style('display', 'block');
           }
