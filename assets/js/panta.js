@@ -81,7 +81,6 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .offset(d3.stackOffsetWiggle)
             .keys(appearanceOrder);
         const series = stack(charScoreTrack);
-        console.log(series);
 
         const x = d3.scaleLinear()
             .domain([2, epAppearances.length-1])
