@@ -135,10 +135,9 @@ d3.json('data/episodes.json').then(data => { // loading episodes
 
         streams
         .on('click', (e,d) => {
-          d3.select('#overlay')
-            .transition().duration('500').style('opacity', '0.98');
           if (d3.selectAll('#info-overlay').nodes().length == 0) {
-            const myColor = d3.color(d3.select('#stream-' + d.key.hashCode()).attr('fill'));
+            const s = d3.select('#stream-' + d.key.hashCode());
+            const myColor = d3.color(s.attr('fill'));
             chart.append('rect')
               .attr('fill', '#FFE9D9')
               .attr('width', 100000)
@@ -147,10 +146,12 @@ d3.json('data/episodes.json').then(data => { // loading episodes
               .attr('opacity', '0')
               .attr('id', 'info-overlay')
               .transition().duration('500').attr('opacity', '0.8');
-            d3.select('#stream-' + d.key.hashCode()).raise();
-            d3.select('#stream-' + d.key.hashCode()).attr('fill', myColor.darker(2))
+            s.raise();
+            s.attr('fill', myColor.darker(2))
             d3.select('#card-' + d.key.hashCode()).style('display', 'flex');
-            d3.select('#characters-cards').style('display', 'block');
+            const cards = d3.select('#characters-cards');
+            cards.style('display', 'block');
+            cards.attr('curr', d.key);
           }
         })
         .on('mouseover', function(d, i) {
@@ -167,12 +168,62 @@ d3.json('data/episodes.json').then(data => { // loading episodes
         d3.select('#close-card')
             .on('click', function() { 
                 d3.select('#info-overlay').transition().duration('500').attr('opacity', '0').remove();
-                d3.select('#overlay')
-                .transition().duration('500').style('opacity', '0');
                 d3.selectAll('.card').style('display', 'none');
-                d3.select('#characters-cards').style('display', 'none')
+                const cards = d3.select('#characters-cards');
+                cards.style('display', 'none');
+                cards.attr('curr', null);
                 d3.selectAll('path.stream').attr('fill', s => color(s.key));
         });
+
+        d3.select('#prev-card')
+            .on('click', function() {
+                const cards = d3.select('#characters-cards');
+                const currChar = cards.attr('curr');
+                d3.selectAll('.card').style('display', 'none');
+                d3.selectAll('path.stream').attr('fill', s => color(s.key));
+                const oldS = d3.select('#stream-' + currChar.hashCode());
+                oldS.lower();
+                const currCharIndex = appearanceOrder.indexOf(currChar);
+                let prevChar;
+                if (currCharIndex == appearanceOrder.length-1) {
+                    prevChar = appearanceOrder[0];
+                } else {
+                    prevChar = appearanceOrder[currCharIndex+1];
+                }
+                console.log(prevChar);                
+                const s = d3.select('#stream-' + prevChar.hashCode());
+                console.log(s);
+                const myColor = d3.color(s.attr('fill'));
+                s.raise();
+                s.attr('fill', myColor.darker(2));
+                d3.select('#card-' + prevChar.hashCode()).style('display', 'flex');                
+                cards.attr('curr', prevChar);
+            });
+
+            d3.select('#next-card')
+            .on('click', function() {
+                const cards = d3.select('#characters-cards');
+                const currChar = cards.attr('curr');
+                d3.selectAll('.card').style('display', 'none');
+                d3.selectAll('path.stream').attr('fill', s => color(s.key));
+                const oldS = d3.select('#stream-' + currChar.hashCode());
+                oldS.lower();
+                const currCharIndex = appearanceOrder.indexOf(currChar);
+                let prevChar;
+                if (currCharIndex == 0) {
+                    prevChar = appearanceOrder[appearanceOrder.length-1];
+                } else {
+                    prevChar = appearanceOrder[currCharIndex-1];
+                }
+                console.log(prevChar);                
+                const s = d3.select('#stream-' + prevChar.hashCode());
+                console.log(s);
+                const myColor = d3.color(s.attr('fill'));
+                s.raise();
+                s.attr('fill', myColor.darker(2));
+                d3.select('#card-' + prevChar.hashCode()).style('display', 'flex');                
+                cards.attr('curr', prevChar);
+            });            
 
     });
 });
