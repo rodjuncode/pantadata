@@ -3,7 +3,7 @@
     "background_color": "#FF5D5A",
     "display": "fullscreen",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "https://rodjuncode.github.io/pantadata/",
     "name": "PantaDATA",
     "short_name": "PantaDATA",
     "icons": [
