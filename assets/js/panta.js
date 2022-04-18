@@ -146,8 +146,10 @@ d3.json('data/episodes.json').then(data => { // loading episodes
               .attr('id', 'info-overlay')
               .transition().duration('500').attr('opacity', '0.95');
             s.raise();
-            s.attr('fill', myColor.darker(2))
-            d3.select('#card-' + d.key.hashCode()).style('display', 'block');
+            s.attr('fill', myColor.darker(2));
+            const c = d3.select('#card-' + d.key.hashCode());
+            c.style('display', 'block');
+            c.select('img').style('border-color', myColor.darker(2));
             const cards = d3.select('#characters-cards');
             cards.style('display', 'block');
             cards.attr('curr', d.key);
@@ -193,7 +195,9 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 const myColor = d3.color(s.attr('fill'));
                 s.raise();
                 s.attr('fill', myColor.darker(2));
-                d3.select('#card-' + prevChar.hashCode()).style('display', 'block');                
+                const c = d3.select('#card-' + prevChar.hashCode());
+                c.style('display', 'block');
+                c.select('img').style('border-color', myColor.darker(2));                             
                 cards.attr('curr', prevChar);
             });
 
@@ -206,20 +210,22 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 const oldS = d3.select('#stream-' + currChar.hashCode());
                 oldS.lower();
                 const currCharIndex = appearanceOrder.indexOf(currChar);
-                let prevChar;
+                let otherChar;
                 if (currCharIndex == 0) {
-                    prevChar = appearanceOrder[appearanceOrder.length-1];
+                    otherChar = appearanceOrder[appearanceOrder.length-1];
                 } else {
-                    prevChar = appearanceOrder[currCharIndex-1];
+                    otherChar = appearanceOrder[currCharIndex-1];
                 }
-                console.log(prevChar);                
-                const s = d3.select('#stream-' + prevChar.hashCode());
+                console.log(otherChar);                
+                const s = d3.select('#stream-' + otherChar.hashCode());
                 console.log(s);
                 const myColor = d3.color(s.attr('fill'));
                 s.raise();
                 s.attr('fill', myColor.darker(2));
-                d3.select('#card-' + prevChar.hashCode()).style('display', 'block');                
-                cards.attr('curr', prevChar);
+                const c = d3.select('#card-' + otherChar.hashCode());
+                c.style('display', 'block');
+                c.select('img').style('border-color', myColor.darker(2));                             
+                cards.attr('curr', otherChar);
             });            
 
     });
