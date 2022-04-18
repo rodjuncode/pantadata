@@ -2,7 +2,7 @@
     "theme_color": "#FF5D5A",
     "background_color": "#FF5D5A",
     "display": "fullscreen",
-    "scope": "/",
+    "scope": "https://rodjuncode.github.io/pantadata/",
     "start_url": "https://rodjuncode.github.io/pantadata/",
     "name": "PantaDATA",
     "short_name": "PantaDATA",
