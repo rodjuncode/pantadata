@@ -6,6 +6,7 @@
     "start_url": "https://rodjuncode.github.io/pantadata/",
     "name": "PantaDATA",
     "short_name": "PantaDATA",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "assets/icons/icon-192x192.png",
