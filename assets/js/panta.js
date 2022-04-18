@@ -153,12 +153,14 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             const cards = d3.select('#characters-cards');
             cards.style('display', 'block');
             cards.attr('curr', d.key);
+            d3.select('#cards-control').style('display', 'flex');
           }
         })
         .on('mouseover', function(d, i) {
           d3.select(this).transition()
             .duration('50')
-            .attr('opacity', '.75') 
+            .attr('opacity', '.75')
+            .style('cursor', 'pointer');
         })
         .on('mouseout', function(d, i) {
           d3.select(this).transition()
@@ -174,6 +176,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 cards.style('display', 'none');
                 cards.attr('curr', null);
                 d3.selectAll('path.stream').attr('fill', s => color(s.key));
+                d3.select('#cards-control').style('display', 'none');
         });
 
         d3.select('#prev-card')
