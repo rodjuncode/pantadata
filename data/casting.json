@@ -22,14 +22,16 @@
         "Keyword" : "Ceci",
         "Cast" : {
             "2022" : "Paulo Gorgulho"             
-        }
+        },
+        "Avatar": "na"
     },
     "c0b5b45e" : {
         "Name" : "Anacleto",
         "Keyword" : "Anacleto",
         "Cast" : {
             "2022" : "Romeo Benedito Lucialdo"             
-        }
+        },
+        "Avatar": "na"
     },
     "d6ee1f9a" : {
         "Name" : "Chico",
@@ -50,7 +52,8 @@
     "e22dbe03" : {
         "Name" : "Raimundo",
         "Keyword" : "Raimundo",
-        "Cast" : { }
+        "Cast" : { },
+        "Avatar": "na"
     },
     "ba21f6e8" : {
         "Name" : "Maria Marruá",
@@ -185,7 +188,7 @@
         "Cast" : {
             "2022" : "Erom Cordeiro"             
         },
-        "Avatar" : "erom-cordeiro"
+        "Avatar" : "na"
     },
     "a1546d75" : {
         "Name" : "Muda",
