@@ -120,14 +120,13 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .data(casting)
             .join('div')
             .attr('class', 'card')
-            .attr('id', d => 'card-' + d.Keyword.hashCode())
-            .append('h3')
-            .text(d => d.Name)
-            .append('img')
-            .attr('src', d => 'assets/img/casting/' + d.Avatar + '.png')
-            .attr('width', 200)
-            .attr('height', 200);
+            .attr('id', d => 'card-' + d.Keyword.hashCode());
 
+        cards.append('img')
+            .attr('src', d => 'assets/img/casting/' + d.Avatar + '.png');          
+
+        cards.append('h3')
+            .text(d => d.Name);
 
         // ###########################################################
         // ## ADDING INTERACTIVITY ###################################
@@ -145,10 +144,10 @@ d3.json('data/episodes.json').then(data => { // loading episodes
               .attr('transform', 'translate(0,-50000)')
               .attr('opacity', '0')
               .attr('id', 'info-overlay')
-              .transition().duration('500').attr('opacity', '0.8');
+              .transition().duration('500').attr('opacity', '0.95');
             s.raise();
             s.attr('fill', myColor.darker(2))
-            d3.select('#card-' + d.key.hashCode()).style('display', 'flex');
+            d3.select('#card-' + d.key.hashCode()).style('display', 'block');
             const cards = d3.select('#characters-cards');
             cards.style('display', 'block');
             cards.attr('curr', d.key);
@@ -190,13 +189,11 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 } else {
                     prevChar = appearanceOrder[currCharIndex+1];
                 }
-                console.log(prevChar);                
                 const s = d3.select('#stream-' + prevChar.hashCode());
-                console.log(s);
                 const myColor = d3.color(s.attr('fill'));
                 s.raise();
                 s.attr('fill', myColor.darker(2));
-                d3.select('#card-' + prevChar.hashCode()).style('display', 'flex');                
+                d3.select('#card-' + prevChar.hashCode()).style('display', 'block');                
                 cards.attr('curr', prevChar);
             });
 
@@ -221,7 +218,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 const myColor = d3.color(s.attr('fill'));
                 s.raise();
                 s.attr('fill', myColor.darker(2));
-                d3.select('#card-' + prevChar.hashCode()).style('display', 'flex');                
+                d3.select('#card-' + prevChar.hashCode()).style('display', 'block');                
                 cards.attr('curr', prevChar);
             });            
 
