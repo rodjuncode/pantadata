@@ -162,5 +162,53 @@
             "2022" : "Alanis Guillen"             
         },
         "Avatar" : "alanis-guillen"
-    }    
+    },
+    "27581480" : {
+        "Name" : "Tadeu",
+        "Keyword" : "Tadeu",
+        "Cast" : {
+            "2022" : "José Loreto"             
+        },
+        "Avatar" : "jose-loreto"
+    },
+    "ee43d279" : {
+        "Name" : "Tibério",
+        "Keyword" : "Tibério",
+        "Cast" : {
+            "2022" : "Guito"             
+        },
+        "Avatar" : "guito"
+    },
+    "9c3ede27" : {
+        "Name" : "Lúcio",
+        "Keyword" : "Lúcio",
+        "Cast" : {
+            "2022" : "Erom Cordeiro"             
+        },
+        "Avatar" : "erom-cordeiro"
+    },
+    "a1546d75" : {
+        "Name" : "Muda",
+        "Keyword" : "Muda",
+        "Cast" : {
+            "2022" : "Bella Campos"             
+        },
+        "Avatar" : "bella-campos"
+    },
+    "86a4738f" : {
+        "Name" : "Alcides",
+        "Keyword" : "Alcides",
+        "Cast" : {
+            "2022" : "Juliano Cazarré"             
+        },
+        "Avatar" : "juliano-cazarre"
+    },
+    "a746aeb1" : {
+        "Name" : "Guta",
+        "Keyword" : "Guta",
+        "Cast" : {
+            "2022" : "Julia Dalavia"             
+        },
+        "Avatar" : "julia-dalavia"
+    }             
 }

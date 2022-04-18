@@ -216,9 +216,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 } else {
                     otherChar = appearanceOrder[currCharIndex-1];
                 }
-                console.log(otherChar);                
                 const s = d3.select('#stream-' + otherChar.hashCode());
-                console.log(s);
                 const myColor = d3.color(s.attr('fill'));
                 s.raise();
                 s.attr('fill', myColor.darker(2));
