@@ -151,29 +151,37 @@ d3.json('data/episodes.json').then(data => { // loading episodes
         // ## ADDING INTERACTIVITY ###################################
         // ########################################################### 
 
+        function openCard(key) {
+            if (d3.selectAll('#info-overlay').nodes().length == 0) {
+                const s = d3.select('#stream-' + key.hashCode());
+                const myColor = d3.color(s.attr('fill'));
+                chart.append('rect')
+                  .attr('fill', '#FFE9D9')
+                  .attr('width', 100000)
+                  .attr('height', 100000)
+                  .attr('transform', 'translate(0,-50000)')
+                  .attr('opacity', '0')
+                  .attr('id', 'info-overlay')
+                  .transition().duration('500').attr('opacity', '0.95');
+                s.raise();
+                s.attr('fill', myColor.darker(2));
+                const c = d3.select('#card-' + key.hashCode());
+                c.style('display', 'block');
+                c.select('img').style('border-color', myColor.darker(2));
+                const cards = d3.select('#characters-cards');
+                cards.style('display', 'block');
+                cards.attr('curr', key);
+                d3.select('#cards-control').style('display', 'flex');
+            }
+        }
+
+        legends
+            .on('click', (e, d) => {
+                openCard(d.Keyword);
+            });
         streams
         .on('click', (e,d) => {
-          if (d3.selectAll('#info-overlay').nodes().length == 0) {
-            const s = d3.select('#stream-' + d.key.hashCode());
-            const myColor = d3.color(s.attr('fill'));
-            chart.append('rect')
-              .attr('fill', '#FFE9D9')
-              .attr('width', 100000)
-              .attr('height', 100000)
-              .attr('transform', 'translate(0,-50000)')
-              .attr('opacity', '0')
-              .attr('id', 'info-overlay')
-              .transition().duration('500').attr('opacity', '0.95');
-            s.raise();
-            s.attr('fill', myColor.darker(2));
-            const c = d3.select('#card-' + d.key.hashCode());
-            c.style('display', 'block');
-            c.select('img').style('border-color', myColor.darker(2));
-            const cards = d3.select('#characters-cards');
-            cards.style('display', 'block');
-            cards.attr('curr', d.key);
-            d3.select('#cards-control').style('display', 'flex');
-          }
+            openCard(d.key);
         })
         .on('mouseover', function(d, i) {
           d3.select(this).transition()
