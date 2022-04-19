@@ -23,6 +23,41 @@
           overflow-x: hidden;
         }
 
+        #head {
+          background: #fff;
+          padding: 40px 0;
+          margin: 0;
+        }
+
+        #intro {
+          padding: 0;
+          margin: 0;
+          margin: 0 auto;
+          width: 280px;
+        }
+
+        @media only screen and (min-width: 768px) {
+          #intro {
+            width: 500px;
+          }
+        }
+
+        #intro p {
+          font-family: 'Roboto Condensed';
+          font-size: 1.1em;
+          margin: 0;
+          padding: 20px 0;
+        }
+
+        #intro h1 {
+          color: #67593F;
+          font-family: 'DM Serif Display';
+          font-size: 3.2em;
+          padding: 0 0 10px 0;
+          margin: 0;
+          text-transform: uppercase;
+        }        
+
         #characters-cards {
           display: none;
           left: 0;
@@ -30,7 +65,7 @@
           top: 0;
           width: 100%;
         }
-      
+
         #characters-cards .card {
           display: none;
           margin: 0 auto;
@@ -100,6 +135,13 @@
       </style>
 </head>
 <body>
+    <div id="head">
+      <div id="intro">
+        <h1>PantaDATA</h1>
+        <p>PANTADATA é um projeto de visualização de dados realizado por Rodrigo Junqueira. O gráfico abaixo representa a relevância de cada personangem na trama da telenovela Pantanal (especificamente o remake feito em 2022), em função do desenrolar dos capítulos da mesma. Os dados são obtidos através de data mining sobre o texto das sinopses oficiais, divulgadas no serviço de streaming Globoplay e capturadas com um web crawler. A visualização de dados foi gerada usando a biblioteca javascript D3.js</p>
+        <p>Role para baixo, para avançar nos capítulos da novela, e clique nas áreas do gráfico para obter mais informações sobre cada personagem.</p>
+      </div>
+    </div>
     <div id="app">
       <div id="stream"></div>
       <div id="characters-cards">

@@ -258,7 +258,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             
             window.addEventListener('scroll', function() {
                 currScore = charScoreTrack[Math.ceil(getScrollPercent()*0.95*charScoreTrack.length)+1];
-                legends.transition().duration('1000').attr('startOffset', function(l) {
+                legends.transition().duration('500').attr('startOffset', function(l) {
                     let streamPath = document.getElementById('stream-' + l.Keyword.hashCode())
                     if (streamPath !== null) {
                         const l = (streamPath.getTotalLength()*0.5)-document.documentElement.clientHeight;
