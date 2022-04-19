@@ -162,7 +162,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                   .attr('transform', 'translate(0,-50000)')
                   .attr('opacity', '0')
                   .attr('id', 'info-overlay')
-                  .transition().duration('500').attr('opacity', '0.95');
+                  .transition().duration('1000').attr('opacity', '0.95');
                 s.raise();
                 s.attr('fill', myColor.darker(2));
                 const c = d3.select('#card-' + key.hashCode());
