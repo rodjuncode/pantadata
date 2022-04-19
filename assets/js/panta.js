@@ -153,6 +153,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
 
         function openCard(key) {
             if (d3.selectAll('#info-overlay').nodes().length == 0) {
+                d3.select('.meta').style('opacity', 0.1);
                 const s = d3.select('#stream-' + key.hashCode());
                 const myColor = d3.color(s.attr('fill'));
                 chart.append('rect')
@@ -197,6 +198,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
 
         d3.select('#close-card')
             .on('click', function() { 
+                d3.select('.meta').style('opacity', 1);
                 d3.select('#info-overlay').transition().duration('500').attr('opacity', '0').remove();
                 d3.selectAll('.card').style('display', 'none');
                 const cards = d3.select('#characters-cards');
