@@ -59,7 +59,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             if (charsInAction.includes(c.Keyword)) {
                 liveScore[c.Keyword]+=0.25; // if the characters appears in an action, it gets +1
             } else {
-                liveScore[c.Keyword]-=0.5; // if the characters doesn't appear in an action, its score is faded
+                liveScore[c.Keyword]-=0.1; // if the characters doesn't appear in an action, its score is faded
                 if (liveScore[c.Keyword] < 0) {
                 liveScore[c.Keyword] = 0;
                 }
@@ -186,7 +186,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 const cards = d3.select('#characters-cards');
                 cards.style('display', 'none');
                 cards.attr('curr', null);
-                d3.selectAll('path.stream').attr('fill', s => color(s.key));
+                d3.selectAll('path.stream').attr('fill', s => color(s.key)).lower();
                 d3.select('#cards-control').style('display', 'none');
         });
 
