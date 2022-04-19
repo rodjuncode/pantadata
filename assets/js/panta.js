@@ -117,13 +117,14 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .attr('id', d => 'stream-' + d.key.hashCode())
             .attr('class', 'stream');
 
-        const legend = chart
+        const legends = chart
             .selectAll('text')
             .data(casting)
             .join('text')
             .append('textPath')
             .attr('xlink:href', d => '#stream-' + d.Keyword.hashCode()).text(d => d.Name)
-            .attr('startOffset', 500);  
+            .attr('startOffset', 10)
+            .style('opacity', 0);  
 
         const cards = d3.select('#characters-cards')
             .selectAll('div')
@@ -240,11 +241,36 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             });   
             
             window.addEventListener('scroll', function() {
-                legend.transition().duration('1000').attr('startOffset', window.scrollY + 500);
+                console.log(getScrollPercent());
+                // appearanceOrder.forEach(function(c) {
+                //     let stream = document.getElementById('stream-' + c.hashCode());
+                //     if (stream !== null) {
+                //         let p = stream.getPointAtLength(window.scrollY + 500);
+                //         console.log(c, p);
+                //     }
+                // });
+                currScore = charScoreTrack[Math.round(getScrollPercent()*charScoreTrack.length)];
+                legends.transition().duration('1000').attr('startOffset', function(l) {
+                    let streamPath = document.getElementById('stream-' + l.Keyword.hashCode())
+                    if (streamPath !== null) {
+                        const l = streamPath.getTotalLength()*0.5;
+                        return l*getScrollPercent();
+                    }
+                    return 0;
+                }).style('opacity', d => (currScore[d.Keyword] == 0 ? 0 : 1));
             })
 
     });
 });
+
+
+function getScrollPercent() {
+    var h = document.documentElement, 
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
+}
 
 
 
