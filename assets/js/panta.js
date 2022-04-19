@@ -95,6 +95,8 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .y0(function(d) { return y(d[0]); })
             .y1(function(d) { return y(d[1]); }).curve(d3.curveBasisOpen);
 
+        console.log(area);
+
         const svg = d3.select('#stream')
             .append('svg')
             .attr('width', document.querySelector('#stream').offsetWidth)
@@ -114,6 +116,14 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .attr('original-color', d => color(d.key))
             .attr('id', d => 'stream-' + d.key.hashCode())
             .attr('class', 'stream');
+
+        const legend = chart
+            .selectAll('text')
+            .data(casting)
+            .join('text')
+            .append('textPath')
+            .attr('xlink:href', d => '#stream-' + d.Keyword.hashCode()).text(d => d.Name)
+            .attr('startOffset', 500);  
 
         const cards = d3.select('#characters-cards')
             .selectAll('div')
@@ -227,10 +237,16 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                 c.style('display', 'block');
                 c.select('img').style('border-color', myColor.darker(2));                             
                 cards.attr('curr', otherChar);
-            });            
+            });   
+            
+            window.addEventListener('scroll', function() {
+                legend.transition().duration('1000').attr('startOffset', window.scrollY + 500);
+            })
 
     });
 });
+
+
 
 
 
