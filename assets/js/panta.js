@@ -241,20 +241,12 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             });   
             
             window.addEventListener('scroll', function() {
-                console.log(getScrollPercent());
-                // appearanceOrder.forEach(function(c) {
-                //     let stream = document.getElementById('stream-' + c.hashCode());
-                //     if (stream !== null) {
-                //         let p = stream.getPointAtLength(window.scrollY + 500);
-                //         console.log(c, p);
-                //     }
-                // });
-                currScore = charScoreTrack[Math.round(getScrollPercent()*charScoreTrack.length)];
+                currScore = charScoreTrack[Math.ceil(getScrollPercent()*0.95*charScoreTrack.length)+1];
                 legends.transition().duration('1000').attr('startOffset', function(l) {
                     let streamPath = document.getElementById('stream-' + l.Keyword.hashCode())
                     if (streamPath !== null) {
-                        const l = streamPath.getTotalLength()*0.5;
-                        return l*getScrollPercent();
+                        const l = (streamPath.getTotalLength()*0.5)-document.documentElement.clientHeight;
+                        return l*getScrollPercent()+100;
                     }
                     return 0;
                 }).style('opacity', d => (currScore[d.Keyword] == 0 ? 0 : 1));
