@@ -265,7 +265,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
                         return l*getScrollPercent()+100;
                     }
                     return 0;
-                }).style('visibility', d => (currScore[d.Keyword] == 0 ? 'hidden' : 'visible'));
+                }).style('visibility', d => (currScore[d.Keyword] < 0.1 ? 'hidden' : 'visible'));
             })
 
     });
