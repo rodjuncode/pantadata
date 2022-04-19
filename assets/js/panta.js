@@ -121,7 +121,7 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .append('textPath')
             .attr('xlink:href', d => '#stream-' + d.Keyword.hashCode()).text(d => d.Name)
             .attr('startOffset', 10)
-            .style('opacity', 0)
+            .style('opacity', d => (charScoreTrack[0][d.Keyword] == 0 ? 0 : 1))
             .attr('fill', function(d) {
                 const myColor = color(d.Keyword);
                 const lightness = d3.hsl(myColor).l;
