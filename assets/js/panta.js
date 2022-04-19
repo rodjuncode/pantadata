@@ -76,7 +76,6 @@ d3.json('data/episodes.json').then(data => { // loading episodes
         const yAxysSize = document.querySelector('#stream').offsetWidth*.7;
         const color = d3.scaleOrdinal(casting.map((c, i) => d3.interpolateYlGnBu(1/casting.length*i))).domain(casting.map(c => c.Keyword));
     
-
         const stack = d3.stack()
             .offset(d3.stackOffsetWiggle)
             .keys(appearanceOrder);
@@ -94,8 +93,6 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .x(function(d) { return x(d.data.action); })
             .y0(function(d) { return y(d[0]); })
             .y1(function(d) { return y(d[1]); }).curve(d3.curveBasisOpen);
-
-        console.log(area);
 
         const svg = d3.select('#stream')
             .append('svg')
@@ -124,7 +121,18 @@ d3.json('data/episodes.json').then(data => { // loading episodes
             .append('textPath')
             .attr('xlink:href', d => '#stream-' + d.Keyword.hashCode()).text(d => d.Name)
             .attr('startOffset', 10)
-            .style('opacity', 0);  
+            .style('opacity', 0)
+            .attr('fill', function(d) {
+                const myColor = color(d.Keyword);
+                const lightness = d3.hsl(myColor).l;
+                let legendColor;
+                if (lightness < 0.5) {
+                    legendColor = d3.color('white');
+                } else {
+                    legendColor = d3.color('black');
+                }
+                return legendColor.hex();
+            });  
 
         const cards = d3.select('#characters-cards')
             .selectAll('div')
